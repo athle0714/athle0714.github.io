@@ -23,7 +23,7 @@
   --champagne-deep:#b89766;
   --haze:#8c7bb0;
   --wine:#5a1f33;
-  --mint:#9cc2a0;
+  --mint:#8fd0c4;
   --blush:#d6a0ae;
   --blue:#8fa9c9;
   --line:rgba(236,226,210,.13);
@@ -223,7 +223,15 @@ p{margin:0}
 .facts dd{margin:0;color:var(--fg)}
 .facts dd .pill{margin-left:8px;vertical-align:middle}
 .lounge-media{position:relative;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:4/5;max-width:100%;border:1px solid var(--line);box-shadow:0 40px 90px rgba(0,0,0,.45)}
-.lounge-media img{width:100%;height:100%;object-fit:cover;object-position:18% 70%;transform:scale(1.01)}
+.lounge-media img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;transform:scale(1.01)}
+.gallery{display:grid;grid-template-columns:1.45fr 1fr;gap:18px;margin-top:18px}
+.gallery figure{margin:0;position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;max-width:100%;background:var(--surface)}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.gallery figcaption{
+  position:absolute;left:16px;bottom:14px;padding:6px 14px;border-radius:var(--pill);
+  background:rgba(21,18,27,.55);backdrop-filter:blur(8px);border:1px solid var(--line);
+  font-size:.76rem;letter-spacing:.12em;color:var(--fg);
+}
 .lounge-media figcaption{
   position:absolute;left:18px;right:18px;bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;
   padding:14px 18px;border-radius:var(--r);background:rgba(21,18,27,.55);backdrop-filter:blur(10px);border:1px solid var(--line);
@@ -303,6 +311,7 @@ footer .wrap{display:grid;gap:26px}
   .timeline::before{display:none}
   .lounge-grid{grid-template-columns:1fr}
   .lounge-media{aspect-ratio:16/11}
+  .gallery{grid-template-columns:1fr}
   .faq{grid-template-columns:1fr}
   .faq-head{position:static}
 }
@@ -475,17 +484,27 @@ footer .wrap{display:grid;gap:26px}
         <span class="hundred" aria-hidden="true">100</span>
         <p class="eyebrow">The lounge</p>
         <h2>恵比寿、100坪。<br>夜の、いちばん良い席を。</h2>
-        <p>ミントグリーンのソファ、大理石のバーカウンター、窓の向こうは恵比寿の夜。ひとりで座れる席も、ふたりで話せる席も、どちらもあります。</p>
+        <p>ミントグリーンのソファ、大理石のバーカウンター、ターコイズに光るネオンのアーチ。真鍮のロッドライトの向こうは、恵比寿の街。ひとりで座れる席も、ふたりで話せる席も、どちらもあります。</p>
         <dl class="facts">
           <dt>Place</dt><dd>東京・恵比寿 <span class="pill">住所は追って</span></dd>
           <dt>Size</dt><dd>100坪のワンフロア</dd>
-          <dt>Seats</dt><dd>ソファ席・バーカウンター・スタンディング</dd>
+          <dt>Seats</dt><dd>ソファ席・バーカウンター・テーブル席</dd>
           <dt>Access</dt><dd>恵比寿駅 徒歩圏内 <span class="pill">分数は確認中</span></dd>
         </dl>
       </div>
       <figure class="lounge-media">
-        <img src="hero.jpg" alt="ミントグリーンのソファと大理石のバーカウンターがあるラウンジのイメージ" width="1920" height="1080" loading="lazy">
+        <img src="lounge-bar.jpg" alt="ターコイズのネオンアーチの下にある大理石のバーカウンターと、ミントグリーンのバースツール" width="1600" height="1067" loading="lazy">
         <figcaption><span>Ledian Lounge — Ebisu</span><span>Mint &amp; Marble</span></figcaption>
+      </figure>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="lounge-wide.jpg" alt="ミントグリーンの曲線ソファとバーカウンター、奥にネオンのアーチが見えるラウンジ全景" width="1600" height="1067" loading="lazy">
+        <figcaption>ロッドライトの向こうに、恵比寿の街</figcaption>
+      </figure>
+      <figure>
+        <img src="lounge-sofa.jpg" alt="らせん階段の下に置かれたミントグリーンの曲線ソファと大理石のテーブル" width="1600" height="1067" loading="lazy">
+        <figcaption>ひとりでも座れる、曲線のソファ</figcaption>
       </figure>
     </div>
   </section>
