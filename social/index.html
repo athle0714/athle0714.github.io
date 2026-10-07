@@ -126,20 +126,20 @@ p{margin:0}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.rise,.hero-media img{animation:none}}
 
-/* ---------- ticket (invitation card) ---------- */
+/* ---------- ticket (next night) ---------- */
 .ticket-wrap{position:relative;z-index:5;margin-top:clamp(-70px,-6vw,-52px)}
 .ticket{
   display:grid;grid-template-columns:1fr auto;align-items:end;gap:14px 40px;
-  background:var(--ivory);color:var(--ink);border-radius:var(--r-lg);padding:26px 34px 28px;
+  background:var(--wine);color:var(--ivory);border-radius:var(--r-lg);padding:26px 34px 28px;
   box-shadow:0 30px 70px rgba(0,0,0,.45);max-width:820px;
 }
-.ticket-k{font-family:var(--caps);font-size:.66rem;letter-spacing:.4em;text-transform:uppercase;color:#7d6e60}
-.ticket .tag{color:var(--wine);justify-self:end}
-.ticket-main{display:grid;gap:8px;padding-top:6px;border-top:1px solid rgba(21,18,27,.14);margin-top:4px}
-.ticket-date{font-family:var(--latin);font-variant-numeric:lining-nums tabular-nums;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1;letter-spacing:.02em;color:var(--ink)}
-.ticket-date small{font-family:var(--display);font-size:.4em;letter-spacing:.14em;margin-left:.35em;vertical-align:.3em;font-weight:500}
-.ticket-place{font-family:var(--display);font-size:.95rem;letter-spacing:.12em;color:#3b3342}
-.ticket-cta{padding-top:6px;border-top:1px solid rgba(21,18,27,.14);margin-top:4px;display:flex;align-items:flex-end;height:100%}
+.ticket-k{font-family:var(--caps);font-size:.66rem;letter-spacing:.4em;text-transform:uppercase;color:var(--champagne)}
+.ticket .tag{color:#f0b9c9;justify-self:end}
+.ticket-main{display:grid;gap:8px;padding-top:6px;border-top:1px solid rgba(239,232,221,.22);margin-top:4px}
+.ticket-date{font-family:var(--latin);font-variant-numeric:lining-nums tabular-nums;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1;letter-spacing:.02em;color:var(--ivory)}
+.ticket-date small{font-family:var(--display);font-size:.4em;letter-spacing:.14em;margin-left:.35em;vertical-align:.3em;font-weight:500;color:var(--champagne)}
+.ticket-place{font-family:var(--display);font-size:.95rem;letter-spacing:.12em;color:rgba(239,232,221,.8)}
+.ticket-cta{padding-top:6px;border-top:1px solid rgba(239,232,221,.22);margin-top:4px;display:flex;align-items:flex-end;height:100%}
 
 /* ---------- six basics ---------- */
 .grid-basics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -346,7 +346,7 @@ footer .wrap{display:grid;gap:28px}
         <div class="ticket-date">10 / 10<small>（土）</small> 19:30</div>
         <div class="ticket-place">恵比寿 — LEDIAN Lounge</div>
       </div>
-      <div class="ticket-cta"><a class="btn btn-dark btn-sm" href="#nights">この夜に行く</a></div>
+      <div class="ticket-cta"><a class="btn btn-primary btn-sm" href="#nights">この夜に行く</a></div>
     </div>
   </div>
 
