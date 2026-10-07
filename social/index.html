@@ -144,13 +144,13 @@ p{margin:0}
 .card-k{font-family:var(--caps);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
 .card h3{font-size:1.22rem}
 .card p{color:var(--muted);font-size:.9rem}
-.card-feature{grid-column:span 2;background:var(--ivory);color:var(--ink);grid-template-columns:1fr auto;align-items:end;gap:18px 32px;padding:36px 38px}
-.card-feature .card-k{grid-column:1/-1;color:#7d6e60}
-.card-feature h3{font-size:clamp(1.5rem,2.3vw,1.9rem)}
-.card-feature p{color:#4a4150;font-size:.95rem;max-width:26em}
-.bignum{font-family:var(--latin);font-variant-numeric:lining-nums;font-size:clamp(4rem,8vw,6.4rem);line-height:.9;font-weight:400;color:var(--ink);text-align:right}
-.bignum .u{font-family:var(--display);font-size:.42em;letter-spacing:.06em;margin-left:.08em;font-weight:500}
-.bignum small{font-family:var(--display);font-size:.2em;letter-spacing:.14em;display:block;text-align:right;margin-top:12px;color:#7d6e60;font-weight:500}
+.card-feature{background:var(--ivory);color:var(--ink)}
+.card-feature .card-k{color:#7d6e60}
+.card-feature p{color:#4a4150}
+.stat{display:flex;align-items:baseline;gap:10px;margin-top:8px;padding-top:14px;border-top:1px solid rgba(21,18,27,.14)}
+.stat b{font-family:var(--latin);font-variant-numeric:lining-nums;font-size:2.4rem;line-height:1;font-weight:400}
+.stat .u{font-family:var(--display);font-size:1.1rem;font-weight:500;letter-spacing:.06em;margin-left:-4px}
+.stat small{font-family:var(--display);font-size:.78rem;letter-spacing:.12em;color:#7d6e60;font-weight:500}
 
 /* ---------- flow ---------- */
 .flow{background:var(--surface)}
@@ -265,7 +265,6 @@ footer .wrap{display:grid;gap:28px}
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
   .grid-basics{grid-template-columns:repeat(2,1fr)}
-  .card-feature{grid-column:span 2}
   .timeline{grid-template-columns:repeat(2,1fr)}
   .timeline::before{display:none}
   .lounge-grid{grid-template-columns:1fr}
@@ -286,8 +285,6 @@ footer .wrap{display:grid;gap:28px}
   .ticket .tag{justify-self:start}
   .ticket-cta{border-top:0;padding-top:4px}
   .grid-basics,.grid-3{grid-template-columns:1fr}
-  .card-feature{grid-column:auto;grid-template-columns:1fr;padding:30px 26px}
-  .bignum{text-align:left}.bignum small{text-align:left}
   .timeline{grid-template-columns:1fr;gap:24px}
   .step{padding-top:0;padding-left:26px}
   .step::before{top:10px}
@@ -381,18 +378,16 @@ footer .wrap{display:grid;gap:28px}
         <h3>本人確認</h3>
         <p>受付で、全員。だから安心して、お話しできます。</p>
       </article>
-      <article class="card card-feature">
-        <div class="card-k">Come alone</div>
-        <div>
-          <h3>一人参加歓迎</h3>
-          <p>むしろ、ひとりで来る方のほうが多い夜です。誰かを誘わなくていい。来たい日に、来たいだけ。</p>
-        </div>
-        <div class="bignum">7<span class="u">割</span><small>がひとりで来ています</small></div>
-      </article>
       <article class="card">
         <div class="card-k">Singles only</div>
         <h3>完全独身限定</h3>
         <p>独身の方だけ。それだけは、きちんと確認しています。</p>
+      </article>
+      <article class="card card-feature">
+        <div class="card-k">Come alone</div>
+        <h3>一人参加歓迎</h3>
+        <p>むしろ、ひとりで来る方のほうが多い夜です。誰かを誘わなくていい。来たい日に、来たいだけ。</p>
+        <div class="stat"><b>7</b><span class="u">割</span><small>がひとりで来ています</small></div>
       </article>
     </div>
   </section>
