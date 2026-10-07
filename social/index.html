@@ -25,6 +25,8 @@
   --mint:#8fd0c4;
   --blush:#d6a0ae;
   --blue:#8fa9c9;
+  --men:#9ec9ec;
+  --women:#f1a6c1;
   --line:rgba(239,232,221,.14);
   --line-strong:rgba(239,232,221,.34);
   --display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
@@ -152,6 +154,12 @@ p{margin:0}
 .stat .u{font-family:var(--display);font-size:1.1rem;font-weight:500;letter-spacing:.06em;margin-left:-4px}
 .stat small{font-family:var(--display);font-size:.78rem;letter-spacing:.12em;color:#7d6e60;font-weight:500}
 
+.ratio{display:flex;height:3px;gap:3px;margin-top:6px}
+.ratio span{display:block;height:100%;border-radius:2px}
+.ratio .men{background:var(--men)}.ratio .women{background:var(--women)}
+.ratio-k{display:flex;justify-content:space-between;font-family:var(--display);font-size:.74rem;letter-spacing:.14em;margin-top:-4px}
+.c-men{color:var(--men)}.c-women{color:var(--women)}
+
 /* ---------- flow ---------- */
 .flow{background:var(--surface)}
 .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative;margin-top:10px}
@@ -192,23 +200,37 @@ figure{margin:0}
 
 /* ---------- schedule ---------- */
 .sched .sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;max-width:none;gap:24px}
-.nights{display:grid}
+.nights{display:grid;gap:8px}
 .night{
-  display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:20px 36px;
-  padding:24px 10px;border-top:1px solid var(--line);min-width:0;
+  display:grid;grid-template-columns:auto 1fr auto auto auto;align-items:center;gap:20px 36px;
+  padding:24px 26px;background:var(--surface);border-radius:var(--r);min-width:0;
 }
-.night:last-child{border-bottom:1px solid var(--line)}
-.night.is-next{background:var(--surface);border-radius:var(--r);border-top-color:transparent;padding:26px 28px;margin-bottom:6px}
-.night.is-next+.night{border-top-color:transparent}
+.night.is-next{background:var(--surface-2);box-shadow:inset 0 0 0 1px rgba(217,193,151,.35)}
+.night.is-soon{opacity:.75}
 .date{display:flex;align-items:baseline;gap:10px;line-height:1;min-width:8em}
-.date b{font-family:var(--latin);font-variant-numeric:lining-nums tabular-nums;font-size:2.5rem;font-weight:400}
+.date b{font-family:var(--latin);font-variant-numeric:lining-nums tabular-nums;font-size:2.6rem;font-weight:400;color:var(--ivory)}
 .date .caps{color:var(--muted)}
-.wd{font-family:var(--display);font-size:.76rem;letter-spacing:.1em;width:2.1em;height:2.1em;border-radius:50%;display:inline-grid;place-items:center;border:1px solid currentColor;margin-left:2px;align-self:center;text-indent:.1em}
-.wd.wed{color:var(--blue)}.wd.sat{color:var(--blush)}
-.night-info{display:grid;gap:3px;min-width:0}
-.night-info strong{font-family:var(--display);font-weight:500;font-size:1.02rem;letter-spacing:.08em}
-.night-info span{color:var(--muted);font-size:.84rem}
-.night-info .where{font-family:var(--display);font-size:.8rem;letter-spacing:.12em;color:var(--fg)}
+.wd{font-family:var(--display);font-size:.76rem;letter-spacing:.1em;width:2.1em;height:2.1em;border-radius:50%;display:inline-grid;place-items:center;margin-left:2px;align-self:center;text-indent:.1em;color:var(--ink)}
+.wd.wed{background:var(--ivory)}.wd.sat{background:var(--champagne)}
+.night-info{display:grid;gap:4px;min-width:0}
+.night-info .next{font-family:var(--caps);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--champagne);margin-bottom:2px}
+.night-info strong{font-family:var(--display);font-weight:500;font-size:1.08rem;letter-spacing:.08em;color:var(--ivory)}
+.night-info .where{font-family:var(--display);font-size:.82rem;letter-spacing:.12em;color:var(--fg)}
+.night-info .time{color:var(--muted);font-size:.82rem;font-variant-numeric:tabular-nums}
+.apps{display:grid;gap:10px;min-width:220px}
+.app{display:grid;grid-template-columns:2.4em 1fr auto;align-items:center;gap:12px;font-size:.78rem;letter-spacing:.08em}
+.app .who{font-family:var(--display);font-weight:500}
+.app .bar{display:block;height:3px;background:rgba(239,232,221,.12);border-radius:2px;overflow:hidden}
+.app .bar b{display:block;height:100%;border-radius:2px}
+.app .n{font-family:var(--latin);font-variant-numeric:lining-nums tabular-nums;font-size:1.05rem;line-height:1;color:var(--ivory);min-width:3.2em;text-align:right}
+.app .n small{font-size:.7em;color:var(--muted);margin-left:2px}
+.app.men .who,.app.men .bar b{color:var(--men);background-color:var(--men)}
+.app.men .who{background:none}
+.app.women .who,.app.women .bar b{color:var(--women);background-color:var(--women)}
+.app.women .who{background:none}
+.apps .closed{font-family:var(--display);font-size:.8rem;letter-spacing:.14em;color:var(--muted)}
+.night .tag{font-size:.8rem}
+.tag-wine{color:#e9a3b8}
 .sched-note{margin-top:26px;color:var(--muted);font-size:.82rem}
 
 /* ---------- first-timers ---------- */
@@ -271,9 +293,9 @@ footer .wrap{display:grid;gap:28px}
   .photos{grid-template-columns:1fr}
   .photos .span2{grid-column:auto}
   .sched .sec-head{grid-template-columns:1fr}
-  .night{grid-template-columns:1fr;gap:14px;padding:22px 4px}
-  .night.is-next{padding:24px 20px}
-  .night .btn,.night .textlink{justify-self:start}
+  .night{grid-template-columns:1fr;gap:16px;padding:22px 20px}
+  .night .btn{justify-self:start}
+  .apps{min-width:0}
   .date{min-width:0}
 }
 </style>
@@ -346,6 +368,8 @@ footer .wrap{display:grid;gap:28px}
         <div class="card-k">Balance</div>
         <h3>男女比率調整</h3>
         <p>どちらかに偏らないよう、人数を見ながら整えています。</p>
+        <div class="ratio" aria-hidden="true"><span class="men" style="width:50%"></span><span class="women" style="width:50%"></span></div>
+        <div class="ratio-k"><span class="c-men">男性</span><span class="c-women">女性</span></div>
       </article>
       <article class="card">
         <div class="card-k">ID check</div>
@@ -483,33 +507,50 @@ footer .wrap{display:grid;gap:28px}
     <div class="nights">
       <article class="night is-next">
         <div class="date"><b>10</b><span class="caps">Oct</span><span class="wd sat">土</span></div>
-        <div class="night-info"><strong>土曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="night-info"><span class="next">Next night</span><strong>土曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span class="time">19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="apps">
+          <div class="app men"><span class="who">男性</span><i class="bar"><b style="width:90%"></b></i><span class="n">18<small>/20</small></span></div>
+          <div class="app women"><span class="who">女性</span><i class="bar"><b style="width:85%"></b></i><span class="n">17<small>/20</small></span></div>
+        </div>
         <span class="tag tag-wine">残席わずか</span>
         <a class="btn btn-primary btn-sm" href="#">この夜に行く</a>
       </article>
       <article class="night">
         <div class="date"><b>14</b><span class="caps">Oct</span><span class="wd wed">水</span></div>
-        <div class="night-info"><strong>水曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="night-info"><strong>水曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span class="time">19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="apps">
+          <div class="app men"><span class="who">男性</span><i class="bar"><b style="width:45%"></b></i><span class="n">9<small>/20</small></span></div>
+          <div class="app women"><span class="who">女性</span><i class="bar"><b style="width:55%"></b></i><span class="n">11<small>/20</small></span></div>
+        </div>
         <span class="tag tag-mint">受付中</span>
-        <a class="textlink" href="#">この夜に行く</a>
+        <a class="btn btn-ghost btn-sm" href="#">この夜に行く</a>
       </article>
       <article class="night">
         <div class="date"><b>17</b><span class="caps">Oct</span><span class="wd sat">土</span></div>
-        <div class="night-info"><strong>土曜の夜</strong><span class="where">六本木 · BELTA SALONE</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="night-info"><strong>土曜の夜</strong><span class="where">六本木 · BELTA SALONE</span><span class="time">19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="apps">
+          <div class="app men"><span class="who">男性</span><i class="bar"><b style="width:88%"></b></i><span class="n">14<small>/16</small></span></div>
+          <div class="app women"><span class="who">女性</span><i class="bar"><b style="width:50%"></b></i><span class="n">8<small>/16</small></span></div>
+        </div>
         <span class="tag tag-blush">女性枠 受付中</span>
-        <a class="textlink" href="#">この夜に行く</a>
+        <a class="btn btn-ghost btn-sm" href="#">この夜に行く</a>
       </article>
       <article class="night">
         <div class="date"><b>21</b><span class="caps">Oct</span><span class="wd wed">水</span></div>
-        <div class="night-info"><strong>水曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="night-info"><strong>水曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span class="time">19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="apps">
+          <div class="app men"><span class="who">男性</span><i class="bar"><b style="width:30%"></b></i><span class="n">6<small>/20</small></span></div>
+          <div class="app women"><span class="who">女性</span><i class="bar"><b style="width:35%"></b></i><span class="n">7<small>/20</small></span></div>
+        </div>
         <span class="tag tag-mint">受付中</span>
-        <a class="textlink" href="#">この夜に行く</a>
+        <a class="btn btn-ghost btn-sm" href="#">この夜に行く</a>
       </article>
-      <article class="night">
+      <article class="night is-soon">
         <div class="date"><b>24</b><span class="caps">Oct</span><span class="wd sat">土</span></div>
-        <div class="night-info"><strong>土曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
-        <span class="tag">近日公開</span>
-        <a class="textlink" href="#">この夜に行く</a>
+        <div class="night-info"><strong>土曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span class="time">19:30 受付開始 — 22:00 クローズ</span></div>
+        <div class="apps"><span class="closed">受付開始前</span></div>
+        <span class="tag ">近日公開</span>
+        <a class="btn btn-ghost btn-sm" href="#">詳細を見る</a>
       </article>
     </div>
     <p class="sched-note">※ 参加費・定員は調整中です。確定しだい、ここに載せます。日付はサンプルです。</p>
