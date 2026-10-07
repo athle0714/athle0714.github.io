@@ -143,7 +143,7 @@ p{margin:0}
 .ticket{
   display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px 28px;
   background:linear-gradient(120deg,#e4d3b1 0%,var(--champagne) 45%,#c9ad7f 100%);color:var(--ink);
-  border-radius:var(--r-lg);padding:22px 30px;transform:rotate(-1.6deg);
+  border-radius:var(--r-lg);padding:22px 30px;
   box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.18) inset;
   max-width:860px;
 }
@@ -185,7 +185,7 @@ p{margin:0}
 .card-feature p{color:rgba(21,18,27,.8);font-size:.95rem;max-width:26em}
 .bignum{font-family:var(--latin);font-size:clamp(4rem,8vw,6.5rem);line-height:.9;letter-spacing:-.02em;font-weight:400;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
 .bignum small{font-family:var(--display);font-size:.28em;letter-spacing:.1em;display:block;text-align:right;margin-top:8px;color:rgba(21,18,27,.7)}
-.card-feature:hover{transform:translateY(-3px) rotate(-.4deg)}
+.card-feature:hover{transform:translateY(-3px)}
 
 /* ---------- flow ---------- */
 .flow{background:linear-gradient(180deg,var(--ink),var(--surface) 50%,var(--ink));position:relative}
@@ -273,8 +273,8 @@ p{margin:0}
   transition:transform .3s ease,border-color .3s ease;min-width:0;
 }
 .night:hover{border-color:rgba(217,193,151,.4);transform:translateX(4px)}
-.night.is-next{border-color:rgba(217,193,151,.6);transform:rotate(-.8deg) scale(1.01);box-shadow:0 24px 60px rgba(0,0,0,.4);background:linear-gradient(120deg,#1a1521,#241b28)}
-.night.is-next:hover{transform:rotate(-.8deg) scale(1.015)}
+.night.is-next{border-color:rgba(217,193,151,.6);box-shadow:0 24px 60px rgba(0,0,0,.4);background:linear-gradient(120deg,#1a1521,#241b28)}
+.night.is-next:hover{transform:translateX(4px)}
 .date{display:flex;align-items:baseline;gap:8px;font-family:var(--latin);font-variant-numeric:tabular-nums;line-height:1;min-width:7.5em}
 .date b{font-size:2.3rem;font-weight:400;letter-spacing:-.01em}
 .date span{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
@@ -350,7 +350,7 @@ footer .wrap{display:grid;gap:26px}
   .hero{min-height:auto}
   .hero .wrap{padding-block:clamp(120px,30vw,180px) 110px}
   .video-note{top:calc(env(safe-area-inset-top,0px) + 84px);right:16px;font-size:.64rem}
-  .ticket{grid-template-columns:1fr;gap:16px;padding:22px;transform:rotate(-1.2deg)}
+  .ticket{grid-template-columns:1fr;gap:16px;padding:22px}
   .ticket-right{justify-content:space-between}
   .grid-basics,.grid-3{grid-template-columns:1fr}
   .card-feature{grid-column:auto;grid-template-columns:1fr;padding:30px 26px}
@@ -369,7 +369,6 @@ footer .wrap{display:grid;gap:26px}
   .venue{min-height:260px}
   .sched .sec-head{grid-template-columns:1fr}
   .night{grid-template-columns:1fr;gap:14px;padding:20px}
-  .night.is-next{transform:rotate(-.6deg)}
   .night .btn{justify-self:start}
   .date{min-width:0}
 }
