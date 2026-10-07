@@ -159,14 +159,15 @@ p{margin:0}
 .step{display:grid;gap:12px;position:relative;padding-top:30px;min-width:0}
 .step::before{content:"";position:absolute;left:0;top:1px;width:9px;height:9px;border-radius:50%;background:var(--surface);border:1px solid var(--champagne)}
 .step.is-open::before{background:var(--champagne)}
+.ill{width:60px;height:60px;color:var(--champagne);margin-bottom:4px}
+.ill svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
 .step time{font-family:var(--latin);font-variant-numeric:lining-nums tabular-nums;font-size:1.6rem;color:var(--champagne);line-height:1}
 .step h3{font-size:1.1rem}
 .step p{color:var(--muted);font-size:.9rem}
-.pull{margin-top:clamp(56px,7vw,88px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:18px 40px;align-items:start}
+.pull{margin-top:clamp(56px,7vw,88px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line)}
 .pull h3{font-size:clamp(1.4rem,2.6vw,2rem)}
 .pull h3 em{font-style:normal;color:var(--champagne)}
 .pull p{color:var(--muted);font-size:.92rem;max-width:30em;margin-top:12px}
-.pull .caps{color:var(--champagne);text-align:right;line-height:2.2;padding-top:.6em}
 
 /* ---------- lounge ---------- */
 .lounge-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
@@ -288,8 +289,6 @@ footer .wrap{display:grid;gap:28px}
   .timeline{grid-template-columns:1fr;gap:24px}
   .step{padding-top:0;padding-left:26px}
   .step::before{top:10px}
-  .pull{grid-template-columns:1fr}
-  .pull .caps{text-align:left;padding-top:0}
   .hundred{right:0;top:-.3em;font-size:7rem}
   .lounge-copy{overflow:clip}
   .facts{grid-template-columns:1fr;gap:4px 0}
@@ -401,21 +400,25 @@ footer .wrap{display:grid;gap:28px}
       </div>
       <div class="timeline">
         <div class="step">
+          <div class="ill" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="9" y="17" width="46" height="30" rx="2"/><circle cx="22" cy="29" r="4.2"/><path d="M14.5 40c1.5-3.4 4.3-5.2 7.5-5.2s6 1.8 7.5 5.2"/><path d="M35 27h13M35 33h9M35 39h6"/></svg></div>
           <time>19:30</time>
           <h3>受付・本人確認</h3>
           <p>身分証を見せていただいて、おしまい。コートを預けて、中へ。</p>
         </div>
         <div class="step">
+          <div class="ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M19 14h26c0 11-5.5 18-13 18s-13-7-13-18z"/><path d="M22 21.5h20"/><path d="M32 32v15"/><path d="M23 49.5h18"/><circle cx="28" cy="18" r=".9"/><circle cx="35" cy="16.5" r=".9"/><circle cx="31.5" cy="26" r=".9"/></svg></div>
           <time>19:45</time>
           <h3>ウェルカムドリンク</h3>
           <p>バーで一杯目を。グラスを持っていると、話しかけやすくなります。</p>
         </div>
         <div class="step is-open">
+          <div class="ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M14 38V29a5 5 0 0 1 5-5h26a5 5 0 0 1 5 5v9"/><path d="M10 38h44v7a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2z"/><path d="M26 24v14M38 24v14"/><path d="M15 47v4M49 47v4"/></svg></div>
           <time>—</time>
           <h3>あとは、自由に</h3>
           <p>ソファでも、バーでも、窓際でも。気の向くままに。</p>
         </div>
         <div class="step">
+          <div class="ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 8v12"/><path d="M24 20h16l-2 4H26z"/><circle cx="32" cy="32" r="7.5"/><path d="M19 52c3.5-3 22.5-3 26 0"/><path d="M14 44l-2-1M50 44l2-1M32 48.5v2.5"/></svg></div>
           <time>22:00</time>
           <h3>ゆるやかに、閉店</h3>
           <p>途中で帰っても大丈夫。最後までいても、大丈夫。</p>
@@ -426,7 +429,6 @@ footer .wrap{display:grid;gap:28px}
           <h3>席替えも、自己紹介タイムも、<em>ありません。</em></h3>
           <p>順番に話す仕組みはつくらない。だから、気の合う人とだけ、ゆっくり話せます。</p>
         </div>
-        <p class="caps">No rotation<br>No name tags<br>No pressure</p>
       </div>
     </div>
   </section>
@@ -436,7 +438,7 @@ footer .wrap{display:grid;gap:28px}
       <div class="lounge-copy">
         <span class="hundred" aria-hidden="true">100</span>
         <p class="eyebrow">The lounge</p>
-        <h2>恵比寿、100坪。<br>夜の、いちばん良い席を。</h2>
+        <h2>恵比寿 100坪。<br>夜のいちばん良い席を。</h2>
         <p>ミントグリーンのソファ、大理石のバーカウンター、ターコイズに光るネオンのアーチ。真鍮のロッドライトの向こうは、恵比寿の街。ひとりで座れる席も、ふたりで話せる席も、どちらもあります。</p>
         <dl class="facts">
           <dt>Place</dt><dd>東京・恵比寿 <span class="tag">住所は追って</span></dd>
