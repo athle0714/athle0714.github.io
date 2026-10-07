@@ -251,14 +251,15 @@ details[open] summary::after{transform:rotate(45deg)}
 details .a{padding:0 4px 22px;color:var(--muted);font-size:.9rem;max-width:40em}
 
 /* ---------- final + footer ---------- */
-.final{padding-block:clamp(40px,6vw,80px) clamp(72px,10vw,120px)}
-.final-card{background:var(--ivory);color:var(--ink);border-radius:var(--r-lg);padding:clamp(52px,7vw,96px) clamp(24px,6vw,80px);display:grid;gap:28px;justify-items:center;text-align:center}
-.final-card .eyebrow{color:#7d6e60}
-.final-card h2{font-size:clamp(1.8rem,4vw,3rem)}
-.final-card p{color:#4a4150;max-width:30em;font-size:.95rem}
-.final-card .hero-cta{justify-content:center}
-.final-card .btn-ghost{border-color:rgba(21,18,27,.35);color:var(--ink)}
-.final-card .btn-ghost:hover{border-color:var(--ink)}
+.final{background:var(--wine);color:var(--ivory);padding-block:clamp(56px,7vw,88px);margin-top:clamp(24px,4vw,48px)}
+.final .wrap{display:grid;grid-template-columns:1.2fr auto;gap:28px 64px;align-items:end}
+.final-copy{display:grid;gap:18px}
+.final .eyebrow{color:var(--champagne)}
+.final h2{font-size:clamp(1.7rem,3.2vw,2.5rem);color:var(--ivory)}
+.final p{color:rgba(239,232,221,.78);max-width:30em;font-size:.95rem}
+.final .hero-cta{margin:0;justify-self:end}
+.final .btn-ghost{border-color:rgba(239,232,221,.45);color:var(--ivory)}
+.final .btn-ghost:hover{border-color:var(--ivory)}
 footer{border-top:1px solid var(--line);padding-block:40px 56px;color:var(--muted);font-size:.8rem}
 footer .wrap{display:grid;gap:28px}
 .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px}
@@ -293,6 +294,8 @@ footer .wrap{display:grid;gap:28px}
   .photos{grid-template-columns:1fr}
   .photos .span2{grid-column:auto}
   .sched .sec-head{grid-template-columns:1fr}
+  .final .wrap{grid-template-columns:1fr}
+  .final .hero-cta{justify-self:start}
   .night{grid-template-columns:1fr;gap:16px;padding:22px 20px}
   .night .btn{justify-self:start}
   .apps{min-width:0}
@@ -599,13 +602,15 @@ footer .wrap{display:grid;gap:28px}
     </div>
   </section>
 
-  <section class="final wrap">
-    <div class="final-card">
-      <p class="eyebrow">Ebisu · Wed &amp; Sat · 19:30</p>
-      <h2>今週の夜、<br>空けておきませんか。</h2>
-      <p>アプリを開く代わりに、恵比寿へ。ひとりで来て、グラスを一杯。それだけで、十分です。</p>
+  <section class="final">
+    <div class="wrap">
+      <div class="final-copy">
+        <p class="eyebrow">Wed &amp; Sat · 19:30 — 22:00</p>
+        <h2>次の水曜か土曜に、恵比寿で。</h2>
+        <p>予約は1分ほどで終わります。空いている夜を見てみてください。</p>
+      </div>
       <div class="hero-cta">
-        <a class="btn btn-dark" href="#nights">次の夜を見る</a>
+        <a class="btn btn-primary" href="#nights">次の夜を見る</a>
         <a class="btn btn-ghost" href="#first">はじめての方へ</a>
       </div>
     </div>
