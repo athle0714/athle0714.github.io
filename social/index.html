@@ -165,45 +165,30 @@ p{margin:0}
 .step h3{font-size:1.1rem}
 .step p{color:var(--muted);font-size:.9rem}
 
-/* ---------- lounge ---------- */
-.lounge-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
-.lounge-copy{display:grid;gap:22px;position:relative}
-.lounge-copy h2{font-size:clamp(1.8rem,3.2vw,2.5rem)}
-.hundred{position:absolute;right:-2%;top:-.5em;font-family:var(--latin);font-variant-numeric:lining-nums;font-size:clamp(7rem,15vw,14rem);line-height:1;color:rgba(217,193,151,.09);pointer-events:none;user-select:none;z-index:0}
-.lounge-copy>*{position:relative;z-index:1}
-.lounge-copy p{color:var(--muted);font-size:.95rem;max-width:34em}
-.facts{display:grid;grid-template-columns:auto 1fr;gap:12px 28px;margin:0;font-size:.92rem;border-top:1px solid var(--line);padding-top:24px}
-.facts dt{font-family:var(--caps);letter-spacing:.32em;text-transform:uppercase;font-size:.66rem;color:var(--champagne);padding-top:.5em}
+/* ---------- venues ---------- */
+.venues{background:var(--surface)}
+.venue-list{display:grid}
+.venue{display:grid;grid-template-columns:1fr 1.45fr;gap:clamp(28px,4vw,64px);padding-block:clamp(40px,5vw,64px);border-top:1px solid var(--line);align-items:start}
+.venue:last-child{border-bottom:1px solid var(--line)}
+.venue-copy{display:grid;gap:18px;align-content:start}
+.venue-copy .caps{color:var(--champagne)}
+.venue-copy h3{font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:.08em}
+.venue-copy h3 small{display:block;font-family:var(--caps);font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.venue-copy p{color:var(--muted);font-size:.93rem;max-width:30em}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:10px 26px;margin:0;font-size:.9rem;border-top:1px solid var(--line);padding-top:20px}
+.facts dt{font-family:var(--caps);letter-spacing:.32em;text-transform:uppercase;font-size:.64rem;color:var(--champagne);padding-top:.5em}
 .facts dd{margin:0;color:var(--fg)}
 .facts dd .tag{margin-left:10px}
 figure{margin:0}
-.lounge-media{display:grid;gap:14px}
-.lounge-media .ph{border-radius:var(--r-photo);overflow:hidden;aspect-ratio:4/5;max-width:100%;box-shadow:0 40px 90px rgba(0,0,0,.45)}
-.lounge-media img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
-.lounge-media figcaption,.gallery figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:var(--caps);letter-spacing:.3em;text-transform:uppercase;font-size:.66rem;color:var(--muted)}
-.lounge-media figcaption span:last-child,.gallery figcaption span:last-child{color:var(--champagne)}
-.gallery{display:grid;grid-template-columns:1.45fr 1fr;gap:18px;margin-top:18px}
-.gallery figure{display:grid;gap:12px;min-width:0}
-.gallery .ph{border-radius:var(--r-photo);overflow:hidden;aspect-ratio:16/10;max-width:100%;background:var(--surface)}
-.gallery img{width:100%;height:100%;object-fit:cover}
-.gallery figcaption{font-family:var(--display);text-transform:none;letter-spacing:.1em;font-size:.82rem;color:var(--muted)}
-
-/* ---------- venues ---------- */
-.venues{background:var(--surface)}
-.venue-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:18px}
-.venue{display:grid;gap:16px;align-content:start;min-width:0}
-.venue .ph{position:relative;border-radius:var(--r-photo);overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--surface-2)}
-.venue img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-a.venue:hover img{transform:scale(1.03)}
-.venue-ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--caps);font-size:clamp(1.4rem,2.4vw,2rem);letter-spacing:.42em;text-transform:uppercase;color:rgba(217,193,151,.22);text-indent:.42em}
-.venue-body{display:grid;gap:6px;padding-top:14px;border-top:1px solid var(--line)}
-.venue-body .tag-caps{color:var(--champagne)}
-.venue-body h3{font-size:1.2rem;letter-spacing:.08em}
-.venue.is-main .venue-body h3{font-size:clamp(1.4rem,2.2vw,1.8rem)}
-.venue-body .caps{color:var(--muted)}
-.venue-body small{font-size:.76rem;color:var(--muted);letter-spacing:.08em}
-.venue-soon .ph{background:repeating-linear-gradient(135deg,var(--surface-2) 0 10px,var(--surface) 10px 11px)}
-.venue-soon .venue-ph{color:rgba(165,156,173,.35)}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.photos figure{display:grid;gap:10px;align-content:start;min-width:0}
+.photos .ph{overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--surface-2)}
+.photos .span2{grid-column:span 2}
+.photos .span2 .ph{aspect-ratio:16/9}
+.photos img{width:100%;height:100%;object-fit:cover}
+.photos figcaption{font-family:var(--display);font-size:.78rem;letter-spacing:.1em;color:var(--muted)}
+.venue-ph{display:grid;place-items:center;height:100%;font-family:var(--caps);font-size:clamp(1.2rem,2vw,1.7rem);letter-spacing:.42em;text-transform:uppercase;color:rgba(217,193,151,.22);text-indent:.42em}
+.venue-soon .venue-ph{color:rgba(165,156,173,.35);background:repeating-linear-gradient(135deg,var(--surface-2) 0 10px,var(--surface) 10px 11px)}
 
 /* ---------- schedule ---------- */
 .sched .sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;max-width:none;gap:24px}
@@ -264,11 +249,7 @@ footer .wrap{display:grid;gap:28px}
   .grid-basics{grid-template-columns:repeat(2,1fr)}
   .timeline{grid-template-columns:repeat(2,1fr)}
   .timeline::before{display:none}
-  .lounge-grid{grid-template-columns:1fr}
-  .lounge-media .ph{aspect-ratio:16/11}
-  .gallery{grid-template-columns:1fr}
-  .venue-grid{grid-template-columns:1fr 1fr}
-  .venue.is-main{grid-column:span 2}
+  .venue{grid-template-columns:1fr}
   .faq{grid-template-columns:1fr}
   .faq-head{position:static}
 }
@@ -285,12 +266,10 @@ footer .wrap{display:grid;gap:28px}
   .timeline{grid-template-columns:1fr;gap:24px}
   .step{padding-top:0;padding-left:26px}
   .step::before{top:10px}
-  .hundred{right:0;top:-.3em;font-size:7rem}
-  .lounge-copy{overflow:clip}
   .facts{grid-template-columns:1fr;gap:4px 0}
   .facts dt{padding-top:14px}
-  .venue-grid{grid-template-columns:1fr}
-  .venue.is-main{grid-column:auto}
+  .photos{grid-template-columns:1fr}
+  .photos .span2{grid-column:auto}
   .sched .sec-head{grid-template-columns:1fr}
   .night{grid-template-columns:1fr;gap:14px;padding:22px 4px}
   .night.is-next{padding:24px 20px}
@@ -423,70 +402,72 @@ footer .wrap{display:grid;gap:28px}
     </div>
   </section>
 
-  <section class="sec wrap" id="lounge">
-    <div class="lounge-grid">
-      <div class="lounge-copy">
-        <span class="hundred" aria-hidden="true">100</span>
-        <p class="eyebrow">The lounge</p>
-        <h2>恵比寿 100坪。<br>夜のいちばん良い席を。</h2>
-        <p>ミントグリーンのソファ、大理石のバーカウンター、ターコイズに光るネオンのアーチ。真鍮のロッドライトの向こうは、恵比寿の街。ひとりで座れる席も、ふたりで話せる席も、どちらもあります。</p>
-        <dl class="facts">
-          <dt>Place</dt><dd>東京・恵比寿 <span class="tag">住所は追って</span></dd>
-          <dt>Size</dt><dd>100坪のワンフロア</dd>
-          <dt>Seats</dt><dd>ソファ席・バーカウンター・テーブル席</dd>
-          <dt>Access</dt><dd>恵比寿駅 徒歩圏内 <span class="tag">分数は確認中</span></dd>
-        </dl>
-      </div>
-      <figure class="lounge-media">
-        <div class="ph"><img src="lounge-bar.jpg" alt="ターコイズのネオンアーチの下にある大理石のバーカウンターと、ミントグリーンのバースツール" width="1600" height="1067" loading="lazy"></div>
-        <figcaption><span>Ledian Lounge — Ebisu</span><span>Mint &amp; Marble</span></figcaption>
-      </figure>
-    </div>
-    <div class="gallery">
-      <figure>
-        <div class="ph"><img src="lounge-wide.jpg" alt="ミントグリーンの曲線ソファとバーカウンター、奥にネオンのアーチが見えるラウンジ全景" width="1600" height="1067" loading="lazy"></div>
-        <figcaption><span>ロッドライトの向こうに、恵比寿の街</span></figcaption>
-      </figure>
-      <figure>
-        <div class="ph"><img src="lounge-sofa.jpg" alt="らせん階段の下に置かれたミントグリーンの曲線ソファと大理石のテーブル" width="1600" height="1067" loading="lazy"></div>
-        <figcaption><span>ひとりでも座れる、曲線のソファ</span></figcaption>
-      </figure>
-    </div>
-  </section>
-
   <section class="sec venues" id="venues">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Venues</p>
-        <h2>恵比寿を拠点に、<br>六本木でも。</h2>
-        <p>夜によって、会場が変わります。どの夜も、ちゃんとした大人のラウンジで。</p>
+        <h2>会場</h2>
+        <p>恵比寿のLEDIAN Loungeを中心に、六本木でも開催しています。会場は日程ごとにご確認ください。</p>
       </div>
-      <div class="venue-grid">
-        <a class="venue is-main" href="#lounge">
-          <div class="ph"><img src="lounge-wide.jpg" alt="LEDIAN Lounge 恵比寿の店内" width="1600" height="1067" loading="lazy"></div>
-          <div class="venue-body">
-            <span class="tag tag-caps">Main venue · Every Wed &amp; Sat</span>
-            <h3>LEDIAN Lounge</h3>
-            <span class="caps">Ebisu — 100 tsubo</span>
+      <div class="venue-list">
+        <article class="venue" id="lounge">
+          <div class="venue-copy">
+            <span class="caps">Ebisu · Every Wed &amp; Sat</span>
+            <h3>LEDIAN Lounge<small>Ebisu, Tokyo</small></h3>
+            <p>恵比寿駅から歩ける、100坪のラウンジです。ミントグリーンのソファ、大理石のバーカウンター、ターコイズに光るネオンのアーチ。ひとりで座れる席も、ふたりで話せる席もあります。</p>
+            <dl class="facts">
+              <dt>Place</dt><dd>東京・恵比寿 <span class="tag">住所は追って</span></dd>
+              <dt>Size</dt><dd>100坪のワンフロア</dd>
+              <dt>Seats</dt><dd>ソファ席・バーカウンター・テーブル席</dd>
+              <dt>Nights</dt><dd>毎週 水曜・土曜</dd>
+            </dl>
           </div>
-        </a>
-        <div class="venue">
-          <div class="ph"><div class="venue-ph" aria-hidden="true">Roppongi</div></div>
-          <div class="venue-body">
-            <span class="tag tag-caps">Occasional · Saturdays</span>
-            <h3>BELTA SALONE</h3>
-            <span class="caps">Roppongi — Members' lounge</span>
-            <small>写真は準備中</small>
+          <div class="photos">
+            <figure class="span2">
+              <div class="ph"><img src="lounge-wide.jpg" alt="ミントグリーンの曲線ソファとバーカウンター、奥にネオンのアーチが見えるラウンジ全景" width="1600" height="1067" loading="lazy"></div>
+              <figcaption>ロッドライトの向こうに、恵比寿の街</figcaption>
+            </figure>
+            <figure>
+              <div class="ph"><img src="lounge-bar.jpg" alt="ターコイズのネオンアーチの下にある大理石のバーカウンター" width="1600" height="1067" loading="lazy"></div>
+              <figcaption>大理石のバーカウンター</figcaption>
+            </figure>
+            <figure>
+              <div class="ph"><img src="lounge-sofa.jpg" alt="らせん階段の下に置かれたミントグリーンの曲線ソファ" width="1600" height="1067" loading="lazy"></div>
+              <figcaption>ひとりでも座れる、曲線のソファ</figcaption>
+            </figure>
           </div>
-        </div>
-        <div class="venue venue-soon">
-          <div class="ph"><div class="venue-ph" aria-hidden="true">Next</div></div>
-          <div class="venue-body">
-            <span class="tag tag-caps">Coming soon</span>
+        </article>
+
+        <article class="venue">
+          <div class="venue-copy">
+            <span class="caps">Roppongi · Saturdays</span>
+            <h3>BELTA SALONE<small>Roppongi, Tokyo</small></h3>
+            <p>六本木の会員制ラウンジです。土曜の夜に、不定期で開催しています。</p>
+            <dl class="facts">
+              <dt>Place</dt><dd>東京・六本木 <span class="tag">詳細は追って</span></dd>
+              <dt>Nights</dt><dd>不定期・土曜</dd>
+            </dl>
+          </div>
+          <div class="photos">
+            <figure class="span2">
+              <div class="ph"><div class="venue-ph" aria-hidden="true">Roppongi</div></div>
+              <figcaption>写真は準備中</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="venue venue-soon">
+          <div class="venue-copy">
+            <span class="caps">Coming soon</span>
             <h3>次の会場</h3>
-            <small>都内で調整中。決まりしだい、ここに。</small>
+            <p>都内で調整中です。決まりしだい、ここに載せます。</p>
           </div>
-        </div>
+          <div class="photos">
+            <figure class="span2">
+              <div class="ph"><div class="venue-ph" aria-hidden="true">Next</div></div>
+            </figure>
+          </div>
+        </article>
       </div>
     </div>
   </section>
