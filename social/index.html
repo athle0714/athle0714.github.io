@@ -239,6 +239,29 @@ p{margin:0}
 }
 .lounge-media figcaption span:last-child{color:var(--mint);letter-spacing:.14em}
 
+/* ---------- venues ---------- */
+.venues{background:linear-gradient(180deg,var(--ink),var(--surface) 60%,var(--ink))}
+.venue-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:18px}
+.venue{
+  position:relative;display:block;border-radius:var(--r-lg);overflow:hidden;min-height:340px;
+  border:1px solid var(--line);background:var(--surface-2);isolation:isolate;
+  transition:transform .3s ease,border-color .3s ease;
+}
+.venue:hover{transform:translateY(-3px);border-color:rgba(217,193,151,.45)}
+.venue img,.venue-ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.venue img{transition:transform .8s ease}
+.venue:hover img{transform:scale(1.04)}
+.venue::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,18,27,.05) 30%,rgba(21,18,27,.85) 100%)}
+.venue-ph{display:grid;place-items:center;background:radial-gradient(80% 60% at 20% 0%,rgba(90,31,51,.7),transparent 60%),radial-gradient(60% 50% at 100% 100%,rgba(140,123,176,.35),transparent 60%),var(--surface-2)}
+.venue-ph .latin{font-size:clamp(3rem,6vw,5rem);letter-spacing:.08em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(217,193,151,.4);line-height:1;transform:translateY(-14%)}
+.venue-body{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;display:grid;gap:8px;justify-items:start}
+.venue-body h3{font-size:1.3rem;letter-spacing:.06em}
+.venue-body .latin{font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--champagne)}
+.venue-body small{font-size:.74rem;color:var(--muted);letter-spacing:.08em}
+.venue.is-main .venue-body h3{font-size:clamp(1.5rem,2.4vw,2rem)}
+.venue-soon{border-style:dashed}
+.venue-soon .venue-ph .latin{-webkit-text-stroke-color:rgba(165,156,173,.3)}
+
 /* ---------- schedule ---------- */
 .sched{background:var(--surface)}
 .sched .sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;max-width:none;gap:24px}
@@ -260,6 +283,9 @@ p{margin:0}
 .night-info{display:grid;gap:4px;min-width:0}
 .night-info strong{font-family:var(--display);font-weight:500;font-size:1.02rem;letter-spacing:.06em}
 .night-info span{color:var(--muted);font-size:.84rem}
+.night-info .where{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.1em;color:var(--fg)}
+.night-info .where::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mint)}
+.night-info .where.roppongi::before{background:var(--blush)}
 .night .btn{min-height:42px;padding:0 18px;font-size:.8rem}
 .sched-note{margin-top:22px;color:var(--muted);font-size:.82rem;display:flex;gap:10px;align-items:flex-start}
 .sched-note::before{content:"※";color:var(--champagne)}
@@ -312,6 +338,9 @@ footer .wrap{display:grid;gap:26px}
   .lounge-grid{grid-template-columns:1fr}
   .lounge-media{aspect-ratio:16/11}
   .gallery{grid-template-columns:1fr}
+  .venue-grid{grid-template-columns:1fr 1fr}
+  .venue.is-main{grid-column:span 2;min-height:380px}
+  .venue{min-height:300px}
   .faq{grid-template-columns:1fr}
   .faq-head{position:static}
 }
@@ -335,6 +364,9 @@ footer .wrap{display:grid;gap:26px}
   .lounge-copy{overflow:clip}
   .facts{grid-template-columns:1fr;gap:4px 0}
   .facts dt{padding-top:14px}
+  .venue-grid{grid-template-columns:1fr}
+  .venue.is-main{grid-column:auto;min-height:320px}
+  .venue{min-height:260px}
   .sched .sec-head{grid-template-columns:1fr}
   .night{grid-template-columns:1fr;gap:14px;padding:20px}
   .night.is-next{transform:rotate(-.6deg)}
@@ -352,7 +384,7 @@ footer .wrap{display:grid;gap:26px}
     <nav class="nav-links" aria-label="ページ内">
       <a href="#basics">6つの約束</a>
       <a href="#flow">夜の流れ</a>
-      <a href="#lounge">会場</a>
+      <a href="#venues">会場</a>
       <a href="#nights">開催日</a>
       <a href="#first">はじめての方へ</a>
     </nav>
@@ -509,6 +541,43 @@ footer .wrap{display:grid;gap:26px}
     </div>
   </section>
 
+  <section class="sec venues" id="venues">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Venues</p>
+        <h2>恵比寿を拠点に、<br>六本木でも。</h2>
+        <p>夜によって、会場が変わります。どの夜も、ちゃんとした大人のラウンジで。</p>
+      </div>
+      <div class="venue-grid">
+        <a class="venue is-main" href="#lounge">
+          <img src="lounge-wide.jpg" alt="LEDIAN Lounge 恵比寿の店内" width="1600" height="1067" loading="lazy">
+          <div class="venue-body">
+            <span class="pill pill-champ"><i></i>メイン会場 · 毎週 水 / 土</span>
+            <h3>LEDIAN Lounge</h3>
+            <p class="latin">Ebisu — 100 tsubo</p>
+          </div>
+        </a>
+        <div class="venue">
+          <div class="venue-ph" aria-hidden="true"><span class="latin">Roppongi</span></div>
+          <div class="venue-body">
+            <span class="pill pill-blush"><i></i>不定期 · 土曜</span>
+            <h3>BELTA SALONE</h3>
+            <p class="latin">Roppongi — Members' lounge</p>
+            <small>写真は準備中</small>
+          </div>
+        </div>
+        <div class="venue venue-soon">
+          <div class="venue-ph" aria-hidden="true"><span class="latin">Next</span></div>
+          <div class="venue-body">
+            <span class="pill"><i></i>準備中</span>
+            <h3>次の会場</h3>
+            <small>都内で調整中。決まりしだい、ここに。</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sec sched" id="nights">
     <div class="wrap">
       <div class="sec-head">
@@ -521,31 +590,31 @@ footer .wrap{display:grid;gap:26px}
       <div class="nights">
         <article class="night is-next">
           <div class="date"><b>10</b><span>Oct</span><span class="wd sat">土</span></div>
-          <div class="night-info"><strong>土曜の夜</strong><span>19:30 受付開始 — 22:00 クローズ</span></div>
+          <div class="night-info"><strong>土曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
           <span class="pill pill-wine"><i></i>残席わずか</span>
           <a class="btn btn-primary" href="#">この夜に行く</a>
         </article>
         <article class="night">
           <div class="date"><b>14</b><span>Oct</span><span class="wd wed">水</span></div>
-          <div class="night-info"><strong>水曜の夜</strong><span>19:30 受付開始 — 22:00 クローズ</span></div>
+          <div class="night-info"><strong>水曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
           <span class="pill pill-mint"><i></i>受付中</span>
           <a class="btn btn-ghost" href="#">この夜に行く</a>
         </article>
         <article class="night">
           <div class="date"><b>17</b><span>Oct</span><span class="wd sat">土</span></div>
-          <div class="night-info"><strong>土曜の夜</strong><span>19:30 受付開始 — 22:00 クローズ</span></div>
+          <div class="night-info"><strong>土曜の夜</strong><span class="where roppongi">六本木 · BELTA SALONE</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
           <span class="pill pill-blush"><i></i>女性枠 受付中</span>
           <a class="btn btn-ghost" href="#">この夜に行く</a>
         </article>
         <article class="night">
           <div class="date"><b>21</b><span>Oct</span><span class="wd wed">水</span></div>
-          <div class="night-info"><strong>水曜の夜</strong><span>19:30 受付開始 — 22:00 クローズ</span></div>
+          <div class="night-info"><strong>水曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
           <span class="pill pill-mint"><i></i>受付中</span>
           <a class="btn btn-ghost" href="#">この夜に行く</a>
         </article>
         <article class="night">
           <div class="date"><b>24</b><span>Oct</span><span class="wd sat">土</span></div>
-          <div class="night-info"><strong>土曜の夜</strong><span>19:30 受付開始 — 22:00 クローズ</span></div>
+          <div class="night-info"><strong>土曜の夜</strong><span class="where">恵比寿 · LEDIAN Lounge</span><span>19:30 受付開始 — 22:00 クローズ</span></div>
           <span class="pill"><i></i>近日公開</span>
           <a class="btn btn-ghost" href="#">この夜に行く</a>
         </article>
