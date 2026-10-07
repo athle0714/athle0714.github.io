@@ -57,7 +57,8 @@ p{margin:0}
 .sec{padding-block:clamp(72px,10vw,128px)}
 .sec-head{display:grid;gap:18px;max-width:40em;margin-bottom:clamp(40px,5vw,64px)}
 .sec-head h2{font-size:clamp(1.6rem,3vw,2.3rem)}
-.sec-head p{color:var(--muted);font-size:.95rem}
+.sec-head p{color:var(--muted);font-size:.95rem;text-wrap:pretty}
+@media (max-width:760px){.sec-head p br{display:none}}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:12px;
   min-height:48px;padding:0 30px;border-radius:var(--r-sm);
@@ -351,7 +352,7 @@ footer .wrap{display:grid;gap:28px}
     <div class="sec-head">
       <p class="eyebrow">The basics</p>
       <h2>ふつうの夜に、<br>ちょうどいい距離感で。</h2>
-      <p>はじめてでも、気負わずに来られるように。この6つだけは、きちんと守っています。</p>
+      <p>はじめてでも、気負わずに来られるように。<br>この6つだけは、きちんと守っています。</p>
     </div>
     <div class="grid-basics">
       <article class="card">
@@ -395,7 +396,7 @@ footer .wrap{display:grid;gap:28px}
       <div class="sec-head">
         <p class="eyebrow">How the night goes</p>
         <h2>当日の流れ</h2>
-        <p>私たちがするのは、受付と一杯目のドリンクをお渡しするところまで。そこから先は、お客様同士の時間です。</p>
+        <p>私たちがするのは、受付と一杯目のドリンクをお渡しするところまで。<br>そこから先は、お客様同士の時間です。</p>
       </div>
       <div class="timeline">
         <div class="step">
@@ -431,7 +432,7 @@ footer .wrap{display:grid;gap:28px}
       <div class="sec-head">
         <p class="eyebrow">Venues</p>
         <h2>会場</h2>
-        <p>恵比寿のLEDIAN Loungeを中心に、六本木でも開催しています。会場は日程ごとにご確認ください。</p>
+        <p>恵比寿のLEDIAN Loungeを中心に、六本木でも開催しています。<br>会場は日程ごとにご確認ください。</p>
       </div>
       <div class="venue-list">
         <article class="venue" id="lounge">
@@ -560,7 +561,7 @@ footer .wrap{display:grid;gap:28px}
     <div class="sec-head">
       <p class="eyebrow">For first-timers</p>
       <h2>はじめてでも、<br>大丈夫な理由。</h2>
-      <p>「行ってみたいけど、ちょっと怖い」。その気持ちがいちばん自然だと思います。だから、こうしています。</p>
+      <p>「行ってみたいけど、ちょっと怖い」。その気持ちがいちばん自然だと思います。<br>だから、こうしています。</p>
     </div>
     <div class="grid-3">
       <article class="card">
